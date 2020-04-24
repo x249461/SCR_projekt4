@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+	
+	<meta charset="utf-8">
+	<title>Strona o kotkach</title>
+	<meta name="description" content="Dowiedz się więcej o kotkach">
+	<meta name="keywords" content="kot, kotek, rasa, kotki">
+	<meta name="author" content="Jan Binkowski i Jakub Dudziński">
+	
+	<meta http-equiv="X-Ua-Compatible" content="IE=edge">
+	
+	<link rel="stylesheet" href="main.css">
+
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&amp;subset=latin-ext" rel="stylesheet">
+	
+</head>
+
+<body>
+	
+	<header>
+	
+		<h1><b>To strona poświęcona kotkom</h1></b><hr><br>
+		<center>Stronę wykonali:</center><br>
+			<table style="width:60%;float:center;" align="center">
+				<tr>
+					<th>Imię</th>
+					<th>Nazwisko</th>
+					<th>Numer indeksu </th>
+					
+				</tr>
+				<tr>
+					<th>Jakub</th>
+					<th>Dudziński</th>
+					<th>xxxxxx</th>
+				</tr>
+				<tr>
+					<th>Jan</th>
+					<th>Binkowski</th>
+					<th>249461</th>
+				</tr>
+	
+			</table><br>
+		
+	</header>
+
+	<div style="text-align: center"><img src="kotek.jpg" alt="Kotek"></div>
+
+		<p style="text-align: center">Kliknij jeśli masz kotka</p>
+  <center> <button onclick="myFunction1()">Tak, mam kotka</button></center>
+    <script>
+        function myFunction1() {
+		alert("To wspaniale!!!");
+        }
+	</script><br>
+
+<p style="text-align: center">Kliknij jeśli nie masz kotka</p>
+<center> <button onclick="myFunction2()">Nie mam kotka</button></center>
+  <script>
+	  function myFunction2() {
+	  alert("Szkoda... :(((");
+	  }
+  </script>
+
+	
+	<p>Tutaj możesz wyszukać nazwy kotów spośród wypisanych poniżej.<br>
+	<input typr="text" placeholder="Szukaj kotka...">
+	<p><ul>
+		<li>Abisyński</li>
+		<li>Perski</li>
+		<li>Brytyjski</li>
+		
+		<li>Rosyjski</li>
+		<li>Syberyjski</li>
+		<li>Sfinks</li>
+		<li>Birmański</li>
+		<li>Turecki</li>
+		<li>Syjamski</li>
+	</ul></p>
+	
+	<script>
+		const searchInput = document.querySelector("input");
+		const li = [...document.querySelectorAll("ul li")];
+		const ul = document.querySelector("ul");
+
+		const searchWord = e => {
+    	const currentWord = e.target.value.toUpperCase();
+    	let result = li;
+    	result = result.filter(li => li.textContent.toLocaleUpperCase().includes(currentWord));
+    	ul.textContent = '';
+    	result.forEach(name => ul.appendChild(name));
+}
+
+searchInput.addEventListener('input', searchWord)
+
+	</script>
+
+	</p>
+	<main>
+
+		
+			<article>
+		
+				<form action="mailto:xjasiurxx@gmail.com" method="post" enctype="text/plain">
+				
+					<div class="row">
+					
+						<fieldset>
+						
+							<legend> Kolor kotka </legend>
+					
+							<div><label><input type="radio" value="1" name="kolor" checked> Biały </label></div>
+							<div><label><input type="radio" value="2" name="kolor"> Czarny </label></div>
+							<div><label><input type="radio" value="3" name="kolor"> Brązowy </label></div>
+					
+						</fieldset>
+					
+					</div>
+					
+					<div class="row">
+					
+						<label for="silnik"> Kolor oczu </label>
+						<select id="silnik" name="oczy">
+						
+							<option value="n">niebieski</option>
+							<option value="z" selected>zielony</option>
+							<option value="br">brązowy</option>
+							<option value="cz">czarny</option>
+						
+						</select>
+					
+					</div>
+					
+					<div class="row">
+					
+						<fieldset>
+						
+							<legend> Rasa kotka </legend>
+							
+							<div class="col">
+								<div><label><input type="checkbox" name="rasa[]" value="1">perski </label></div>
+								<div><label><input type="checkbox" name="rasa[]" value="2"> syberyjski </label></div>
+								<div><label><input type="checkbox" name="rasa[]" value="3"> Ragdoll </label></div>
+								<div><label><input type="checkbox" name="rasa[]" value="4"> Maine Coon </label></div>
+							</div>
+							
+							<div class="col">
+								<div><label><input type="checkbox" name="rasa[]" value="5"> Sfinks </label></div>
+								<div><label><input type="checkbox" name="rasa[]" value="6"> birmański </label></div>
+								<div><label><input type="checkbox" name="rasa[]" value="7"> turecki </label></div>
+								<div><label><input type="checkbox" name="rasa[]" value="8"> syjamski </label></div>
+							</div>
+							
+							<div class="col">
+								<div><label><input type="checkbox" name="rasa[]" value="9"> egzotyczny krótkowsłosy </label></div>
+								<div><label><input type="checkbox" name="rasa[]" value="10"> bengalski </label></div>
+								<div><label><input type="checkbox" name="rasa[]" value="11"> dachowiec </label></div>
+								<div><label><input type="checkbox" name="rasa[]" value="12"> rosyjski </label></div>
+							</div>
+							
+						</fieldset>
+					
+					</div>
+					
+					<div class="row">
+					
+						<label for="obroza"> Jaka obroża dla kotka? </label>
+						
+						<div style="margin-top:10px;">
+							<select id="obroza" name="obroza[]" multiple size="4">
+							
+								<option value="k">czerwona skórzana</option>
+								<option value="c">czarna skórzana</option>
+								<option value="t">zielona materiałowa</option>
+								<option value="b">biała maateriałowa</option>
+							
+							</select>
+						</div>
+					
+					</div>
+					
+					<div class="row">
+					
+						<label> Twoje imię <input type="text" name="imie" placeholder="Jak masz na imię?"></label>
+						
+					
+					
+					</div>
+					<p style="font-size: large;">Opisz nam swojego idealnego kotka!</p>
+					<textarea name="comment" cols="50" id="comment" rows="5">Opisz go nam :D</textarea>
+					<br><br>
+					<div class="row">
+						<label> Ile kotków chciałbyś mieć?<input type="number" name="liczba" step="1"></label>
+					</div>
+					
+					<div class="row">
+						<br> Naciśnij kotka by wysłać ankietę!<br>
+						<input type="image" src="cathand.jpg"style="width:269px;height:187px; onClick="this.form.submit()">
+						
+					</div>
+			</form>				
+<hr>
+
+
+<p>
+	Przodkiem kota domowego jest kot nubijski – według poglądów większości współczesnych naukowców różnice pomiędzy kotem domowym i nubijskim są tak niewielkie, że należą one do tego samego podgatunku. Istnieją rozbieżności w kwestii daty udomowienia kota. Większość źródeł sugeruje lata 4000–3700 p.n.e., a miejscem, w którym miało do tego dojść, była Nubia. Istnieją jednak dowody (grób mężczyzny z kotem[7] z Cypru sprzed ok. 7500 r. p.n.e.), że domestykacja kota zaczęła się znacznie wcześniej i trwała kilka tysięcy lat, a jej miejscem był obszar Żyznego Półksiężyca. Już ok. 2000 r. p.n.e. kot był pospolicie hodowany w starożytnym Egipcie, gdzie był zwierzęciem świętym, utożsamianym z boginią Bastet, a zwłoki kotów mumifikowano. Również Germanie kojarzyli go ze swoją boginią płodności Freją, która jeździła powozem zaprzężonym w te zwierzęta. Później zaczęto wykorzystywać go do tępienia gryzoni. Od momentu swego udomowienia kot stał się bohaterem licznych baśni i mitów.
+
+W chrześcijańskiej, średniowiecznej Europie koty były tępione jako zwierzęta kojarzone z czarownicami (zob. chowaniec), ślad tych przesądów pozostał do dzisiaj w powiedzeniu o pechu przynoszonym przez czarnego kota. Również w Japonii uważano je za wcielenie demonów (zob. bakeneko). Nie oznacza to jednak, że koty nie towarzyszyły człowiekowi: odkryto między innymi chorwacki manuskrypt z XV wieku z widocznymi, odbitymi kocimi łapami[8]. Charakterystyczną duńską tradycją związaną z irlandzkim świętem Fastelavn jest „zabawa w kota w beczce” – ostatni przypadek wykorzystania żywego zwierzęcia zanotowano około 1880 roku w Reersø[9]. O wiele lepiej traktowano koty w kulturze islamu. Nawet prorok Mahomet miał kota o imieniu Muezza. Również w świątyniach buddyjskich (np. w Birmie) niekiedy hodowano te zwierzęta.
+
+Wyhodowano wiele ras kota domowego, różniących się ubarwieniem, wielkością i długością włosów; współczesne wzorce niektórych starszych ras znacznie odbiegają od ich wcześniejszych cech (jak w przypadku kotów perskich czy syjamskich). Znaczna liczba kotów domowych żyje samodzielnie w miastach (w Polsce są to tzw. koty piwniczne lub 
+		</p>
+	
+		
+
+
+
+
+					
+
+				
+				
+			
+		</article>
+		
+	</main>
+
+</body>
+</html>
